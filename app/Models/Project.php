@@ -16,4 +16,8 @@ class Project extends Model
         $this->attributes['titolo'] = $_titolo;
         $this->attributes['slug'] = Str::slug($_titolo);
     }
+
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
 }

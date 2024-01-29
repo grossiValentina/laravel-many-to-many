@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('types', function (Blueprint $table) {
+        Schema::create('technologies', function (Blueprint $table) {
             $table->id();
-            $table->string('type_id')->unique();
-            $table->string('obiettivo')->unique();
+            $table->string('nome')->unique();
+            $table->string('slug')->unique();
+            $table->string('hex_color')->nullable();
             $table->timestamps();
-
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('types');
+        Schema::dropIfExists('technologies');
     }
 };
