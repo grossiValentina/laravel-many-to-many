@@ -26,15 +26,18 @@
                     <div>
                         <h6>Seleziona:</h6>
                         @foreach ($technologies as $technology)
+
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="technology-{{ $technology->id }}"
+                                <input @checked($project->technologies->contains($technology))
+                                class="form-check-input" type="checkbox" id="technology-{{ $technology->id }}"
                                     value="{{ $technology->id }}" name="technologies[]">
                                 <label class="form-check-label" for="technology-{{ $technology->id }}">
                                     {{ $technology->nome }}</label>
                             </div>
+
                         @endforeach
                     </div>
-                    
+
                     <button class="btn btn-success mt-4" type="submit">Salva</button>
                 </form>
             </div>
