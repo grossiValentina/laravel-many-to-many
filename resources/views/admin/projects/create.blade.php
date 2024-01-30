@@ -25,6 +25,17 @@
                     <textarea class="form-control" name="descrizione" id="descrizione" rows="3">{{ old('descrizione') }}</textarea>
                 </div>
 
+                <div>
+                    @foreach ($technologies as $technology)
+                     
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="technology-{{$technology->id}}">
+                        <label class="form-check-label" for="technology-{{$technology->id}}"> {{ $technology->nome }}</label>
+                    </div>
+
+                    @endforeach
+                </div>
+
                 <button class="btn btn-success mt-4" type="submit" >Salva</button>
 
             </form>
