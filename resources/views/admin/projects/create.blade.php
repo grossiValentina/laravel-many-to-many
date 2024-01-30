@@ -26,10 +26,11 @@
                 </div>
 
                 <div>
+                    <h6>Seleziona:</h6>
                     @foreach ($technologies as $technology)
                      
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="technology-{{$technology->id}}">
+                        <input class="form-check-input" type="checkbox" id="technology-{{$technology->id}}" value="{{ $technology->id }}" name="technologies[]">
                         <label class="form-check-label" for="technology-{{$technology->id}}"> {{ $technology->nome }}</label>
                     </div>
 

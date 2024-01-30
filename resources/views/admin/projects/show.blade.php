@@ -10,4 +10,12 @@
     <p class="text-center pt-3">{{ $project->descrizione }}</p>
 </div>
 
+<div>
+    <h6>Tecnologie:</h6>
+    @foreach ( $project->technologies as $technology )
+    <span class="badge rounded-pill" style="background-color: {{ $technology->hex_color }}">{{ $technology->nome }}</span>
+    @endforeach
+   
+</div>
+
 @endsection
